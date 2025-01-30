@@ -24,7 +24,7 @@ describe.only('ServeRest API', () => {
     });
   });
 
-    it('Registered users and confirmation the userAdmin', () => {
+    it('Registered users and confirmation of Admin User', () => {
       cy.request({
         method: 'GET',
         url: '/usuarios',
