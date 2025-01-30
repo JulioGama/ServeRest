@@ -1,6 +1,6 @@
 /// <reference types="Cypress"/>
 
-describe.only('ServeRest API', () => {
+describe('ServeRest API', () => {
   beforeEach(() => {
     cy.visit('/')
   });
@@ -44,4 +44,25 @@ describe.only('ServeRest API', () => {
 
       })
     });
+
+    it('Create normal user', () => {
+      cy.request({
+        method: 'POST',
+        url: '/usuarios',
+        headers: {
+          Authorization: `Bearer ${authToken}`
+        },
+        body: {
+            "nome": "Usuario Teste",
+            "email": "teste@teste.com.br",
+            "password": "teste",
+            "administrador": "false"
+        }
+    }).then(response => {
+      expect(response.status).to.equal(201)
+      expect()
+    })
   });
+
+
+})
